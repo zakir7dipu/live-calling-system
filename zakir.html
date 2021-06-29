@@ -128,6 +128,9 @@
     }
 
     function makeACall(){
+        $('#connectionContent').empty().append('<div class="col-12 text-center">\n' +
+            '<h3 class="text-success text-center font-weight-bold">You are calling............</h3>'+
+            '                            </div>');
         $('#selfVideoContainer').removeClass('d-none');
         navigator.mediaDevices.getUserMedia(askingPermission).then(function (filestreem){
             player1.srcObject = filestreem;
@@ -157,6 +160,9 @@
 
     function receiveACall(call) {
         audio.pause();
+        $('#connectionContent').empty().append('<div class="col-12 text-center">\n' +
+            '<h3 className="text-success text-center font-weight-bold">You are receiving a call............</h3>'+
+            '                            </div>');
         $('#selfVideoContainer').removeClass('d-none');
         navigator.mediaDevices.getUserMedia(askingPermission).then(function (stream) {
             player1.srcObject = stream;
